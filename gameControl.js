@@ -2,6 +2,7 @@ const updateGameArea = () => {
   myGameArea.clear();
   foodObject.update();
   playerObject.update();
+  ifFoodEaten(playerObject, foodObject);
 }
 
 const moveUp = () => {
