@@ -49,17 +49,17 @@ const updateGameArea = () => {
 }
 
 const moveup = () => {
-
+myGamePiece.y -= 20;
 }
 
 const movedown = () => {
-
+myGamePiece.y += 20;
 }
 
 const moveleft = () => {
-
+myGamePiece.x -= 20;
 }
 
 const moveright = () => {
-
+myGamePiece.x += 20;
 }
