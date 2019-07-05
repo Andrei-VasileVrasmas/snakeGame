@@ -32,34 +32,51 @@ class Square {
     this.ctx = ctx;
   }
 
-
-
-
-
   update() {
     this.ctx.fillStyle = this.color;
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 }
 
-
 const updateGameArea = () => {
   myGameArea.clear();
   myGamePiece.update();
 }
 
-const moveup = () => {
-myGamePiece.y -= 20;
+const moveUp = () => {
+  myGamePiece.y -= 20;
 }
 
-const movedown = () => {
-myGamePiece.y += 20;
+const moveDown = () => {
+  myGamePiece.y += 20;
 }
 
-const moveleft = () => {
-myGamePiece.x -= 20;
+const moveLeft = () => {
+  myGamePiece.x -= 20;
 }
 
-const moveright = () => {
-myGamePiece.x += 20;
+const moveRight = () => {
+  myGamePiece.x += 20;
 }
+
+const checkKey = (e) => {
+  e = e || window.event;
+
+  if (e.keyCode === 37) {
+    moveLeft();
+  }
+
+  if (e.keyCode === 39) {
+    moveRight();
+  }
+
+  if (e.keyCode === 38) {
+    moveUp();
+  }
+
+  if (e.keyCode === 40) {
+    moveDown();
+  }
+}
+
+document.onkeydown = checkKey;
