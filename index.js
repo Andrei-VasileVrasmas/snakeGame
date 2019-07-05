@@ -45,18 +45,32 @@ const updateGameArea = () => {
 
 const moveUp = () => {
   myGamePiece.y -= 20;
+  if (myGamePiece.y <= 0){
+myGamePiece.y = 370;
+
+  }
 }
 
 const moveDown = () => {
   myGamePiece.y += 20;
+  if (myGamePiece.y >= 390){
+    myGamePiece.y = 10;
+  }
 }
 
 const moveLeft = () => {
   myGamePiece.x -= 20;
+  if(myGamePiece.x <=0){
+    myGamePiece.x = 370;
+
+  }
 }
 
 const moveRight = () => {
   myGamePiece.x += 20;
+  if(myGamePiece.x >=390){
+    myGamePiece.x = 10;
+  }
 }
 
 const checkKey = (e) => {
