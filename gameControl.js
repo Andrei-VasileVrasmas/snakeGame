@@ -1,5 +1,6 @@
 const updateGameArea = () => {
   myGameArea.clear();
+  foodObject.update();
   playerObject.update();
 }
 
