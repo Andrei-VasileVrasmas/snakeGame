@@ -13,13 +13,3 @@ class Food {
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
   }
 }
-
-const pickFoodPosition = (playerPosition) => {
-  let foodPosition = null;
-
-  do {
-    foodPosition = Math.floor(Math.random() * 400);
-  } while (Math.abs(playerPosition - foodPosition) < 20);
-
-  return foodPosition;
-}
