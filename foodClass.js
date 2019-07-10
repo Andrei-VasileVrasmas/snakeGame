@@ -1,10 +1,10 @@
 
 class Food {
-  constructor(width, height, color, x, y, ctx) {
+  constructor(width, height, color, ctx) {
     this.width = width;
     this.height = height;
-    this.x = x;
-    this.y = y;
+    this.x = Math.floor(Math.random() * 400);
+    this.y = Math.floor(Math.random() * 400);
     this.color = color;
     this.ctx = ctx;
   }

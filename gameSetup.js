@@ -18,6 +18,6 @@ const myGameArea = {
 
 const startGame = () => {
   myGameArea.start();
-  playerObject = new Player(20, 20, 'red', 190, 190, myGameArea.context);
-  foodObject = new Food(20, 20, 'green', 10, 10, myGameArea.context);
+  playerObject = new Player(20, 20, 'red', 180, 180, myGameArea.context);
+  foodObject = new Food(20, 20, 'green', myGameArea.context);
 }

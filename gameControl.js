@@ -7,31 +7,31 @@ const updateGameArea = () => {
 
 const moveUp = () => {
   playerObject.y -= 20;
-  if (playerObject.y <= 0) {
-    playerObject.y = 370;
+  if (playerObject.y < 0) {
+    playerObject.y = 380;
 
   }
 }
 
 const moveDown = () => {
   playerObject.y += 20;
-  if (playerObject.y >= 390) {
-    playerObject.y = 10;
+  if (playerObject.y >= 400) {
+    playerObject.y = 0;
   }
 }
 
 const moveLeft = () => {
   playerObject.x -= 20;
-  if (playerObject.x <= 0) {
-    playerObject.x = 370;
+  if (playerObject.x < 0) {
+    playerObject.x = 380;
 
   }
 }
 
 const moveRight = () => {
   playerObject.x += 20;
-  if (playerObject.x >= 390) {
-    playerObject.x = 10;
+  if (playerObject.x >= 400) {
+    playerObject.x = 0;
   }
 }
 
