@@ -1,9 +1,9 @@
 const ifFoodEaten = (playerObject, foodObject) => {
   if (
-    playerObject.x === foodObject.x &&
-    playerObject.y === foodObject.y
+    (Math.abs(playerObject.x - foodObject.x) <= 20) &&
+    (Math.abs(playerObject.y - foodObject.y) <= 20)
   ) {
-    console.log('Food eaten');
+    playerObject.addScore();
+    foodObject.reset();
   }
-
 }
