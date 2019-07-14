@@ -8,25 +8,47 @@ class Player {
     this.ctx = ctx;
     this.score = 0;
     this.blocks = [];
-    this.lastX = x;
-    this.lastY = y;
+    this.lastMove = null;
+    this.lastTailMove = null;
   }
+
 
   update() {
     this.ctx.fillStyle = this.color;
     this.ctx.fillRect(this.x, this.y, this.width, this.height);
+
     for (let i = 0; i < this.blocks.length; i += 1) {
-      this.ctx.fillRect(this.blocks[i].x, this.blocks[i].y, this.width, this.height);
+      let posX = this.x;
+      let posY = this.y;
+
+      for (let b = 0; b <= i; b += 1) {
+        if (this.blocks[b] === 'up') {
+          posY += 20;
+        }
+        if (this.blocks[b] === 'down') {
+          posY -= 20;
+        }
+        if (this.blocks[b] === 'left') {
+          posX += 20;
+        }
+        if (this.blocks[b] === 'right') {
+          posX -= 20;
+        }
+      }
+
+      this.ctx.fillRect(posX, posY, this.width, this.height);
     }
   }
+
 
   addScore() {
     this.score += 1;
     document.getElementById('score').innerHTML = 'Score:' + this.score;
 
-    this.blocks.push({
-      x: this.lastX,
-      y: this.lastY,
-    })
+    if (this.blocks.length > 0) {
+      this.blocks.push(this.lastTailMove);
+    } else {
+      this.blocks.push(this.lastMove);
+    }
   }
 }
